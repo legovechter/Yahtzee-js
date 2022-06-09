@@ -115,8 +115,10 @@ function rollDice() {
 
     makeScore();
     updateScore();
+    if (diceRolls >= 1) {
+        diceRolls -= 1;
 
-    diceRolls -= 1;
+    }
     document.getElementById("diceRolls").innerHTML = "Dicerolls left:" + diceRolls;
 }
 
@@ -254,7 +256,7 @@ function choicePlayerEvent(clicked_id) {
 //resets the table
 function resetTable() {
 
-
+    document.getElementById("roll").disabled = true;
     modal.style.display = "none";
 
 
@@ -720,6 +722,7 @@ function checkOptionsLeft() {
     if (option == 13) {
         modal.style.display = "block";
         gameStart = false;
+        document.getElementById("roll").disabled = true;
     }
 }
 
@@ -791,6 +794,17 @@ to-do:
 *	some titles above certain elements
 	- dice holding
 	- big title of the game	
-*/
+
+//done
+*   bugs "thanks dad"
+    - dice shows -x
+    - disable throw button after end game
+    - 
+
+
+    */
+
+
+
 
 //#endregion
