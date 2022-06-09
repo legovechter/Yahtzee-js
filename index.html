@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeethzee</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Yahtzee the game</h1>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h1>End of game</h1>
+                <h1>Score:
+                    <h1 id="totalPlayer"></h1>
+                </h1>
+                <button class="ui" type="button" onclick="resetTable()">Reset game</button>
+            </div>
+
+
+        </div>
+    </header>
+    <article>
+        <aside>
+            <div class="grid-container">
+                <div class="item2">
+                    Score:
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="item">
+                    Option:
+                </div>
+                <div class="item">
+                    Player 1 score:
+                </div>
+                <div class="item">
+                    Ones
+                </div>
+                <div class="item">
+                    <button id="P1" class="score" type="button" onclick="choicePlayerEvent(this.id)">
+                        <p id="onesPlayer"></p>
+                    </button>
+
+                </div>
+                <div class="item">
+                    Twos
+                </div>
+                <div class="item">
+                    <button id="P2" class="score" type="button" onclick="choicePlayerEvent(this.id)">
+                        <p id="twosPlayer"></p>
+                    </button>
+
+                </div>
+                <div class="item">
+                    Threes
+                </div>
+                <div class="item">
+                    <button id="P3" class="score" type="button" onclick="choicePlayerEvent(this.id)">
+                        <p id="threesPlayer"></p>
+                    </button>
+
+                </div>
+                <div class="item">
+                    Fours
+                </div>
+                <div class="item">
+                    <button id="P4" class="score" type="button" onclick="choicePlayerEvent(this.id)">
+                        <p id="foursPlayer"></p>
+                    </button>
+
+                </div>
+                <div class="item">
+                    Fives
+                </div>
+                <div class="item">
+                    <button id="P5" class="score" type="button" onclick="choicePlayerEvent(this.id)">
+                        <p id="fivesPlayer"></p>
+                    </button>
+
+                </div>
+                <div class="item">
+                    Sixes
+                </div>
+                <div class="item">
+                    <button id="P6" class="score" type="button" onclick="choicePlayerEvent(this.id)">
+                        <p id="sixesPlayer"></p>
+                    </button>
+
+                </div>
+                <div class="item">
+                    Sum:
+                </div>
+                <div class="item">
+                    <p id="sumPlayer"></p>
+                </div>
+                <div class="item">
+                    Bonus:
+                </div>
+                <div class="item">
+                    <p id="bonusPlayer"></p>
+                </div>
+                <div class="item">
+                    Three of a kind
+                </div>
+                <div class="item">
+
+
+                    <button id="P3K" class="score" type="button" onclick="choicePlayerEvent(this.id)">
+                        <p id="threeofkindPlayer"></p>
+                    </button>
+                </div>
+
+                <div class="item">
+                    Four of a kind
+                </div>
+                <div class="item">
+                    <button id="P4K" class="score" type="button" onclick="choicePlayerEvent(this.id)">
+                        <p id="fourofkindPlayer"></p>
+                </div>
+                <div class="item">
+                    Full House
+                </div>
+                <div class="item">
+                    <button id="PFH" class="score" type="button" onclick="choicePlayerEvent(this.id)">
+                        <p id="fullhousePlayer"></p>
+                </div>
+                <div class="item">
+                    Small straight
+                </div>
+                <div class="item">
+                    <button id="PSS" class="score" type="button" onclick="choicePlayerEvent(this.id)">
+                        <p id="smallPlayer"></p>
+                </div>
+                <div class="item">
+                    Big straight
+                </div>
+                <div class="item">
+                    <button id="PBS" class="score" type="button" onclick="choicePlayerEvent(this.id)">
+                        <p id="bigPlayer"></p>
+                </div>
+                <div class="item">
+                    Chance
+                </div>
+                <div class="item">
+                    <button id="PC" class="score" type="button" onclick="choicePlayerEvent(this.id)">
+                        <p id="chancePlayer"></p>
+                </div>
+                <div class="item">
+                    Yahtzee
+                </div>
+                <div class="item">
+                    <button id="PY" class="score" type="button" onclick="choicePlayerEvent(this.id)">
+                        <p id="yahtzeePlayer"></p>
+                    </div>
+            </div>
+
+        </aside>
+
+        <br>
+        <div class="flex-container">
+            <button id="1" class="dices" type="button" onclick="diceEvent(this.id)"><h1 style="text-align: center;" id="value"></h1></button>
+                    <button id="2" class="dices" type="button" onclick="diceEvent(this.id)"><h1 style="text-align: center;" id="value1"></h1></button>
+                    <button id="3" class="dices" type="button" onclick="diceEvent(this.id)"><h1 style="text-align: center;" id="value2"></h1></button>
+                    <button id="4" class="dices" type="button" onclick="diceEvent(this.id)"><h1 style="text-align: center;" id="value3"></h1></button>
+                    <button id="5" class="dices" type="button" onclick="diceEvent(this.id)"><h1  style="text-align: center;"id="value4"></h1></button>
+
+                </div>
+                <div class="container">
+                    <button class="ui" type="button" onclick="rollDice()">Roll dice</button>
+
+                    <div id="diceRolls">
+                    </div>
+
+                    <button class="ui" type="button" onclick="resetTable()">Reset game</button>
+
+                </div>
+
+                <h1>Stored dice:</h1>
+                <div class="flex-container">
+                    <button id="6" class="stored" type="button" onclick="diceEvent2(this.id)"><h1 style="text-align: center;" id="numbHold"></h1></button>
+                    <button id="7" class="stored" type="button" onclick="diceEvent2(this.id)"><h1 style="text-align: center;" id="numb2Hold"></h1></button>
+                    <button id="8" class="stored" type="button" onclick="diceEvent2(this.id)"><h1 style="text-align: center;" id="numb3Hold"></h1></button>
+                    <button id="9" class="stored" type="button" onclick="diceEvent2(this.id)"><h1 style="text-align: center;" id="numb4Hold"></h1></button>
+                    <button id="10" class="stored" type="button" onclick="diceEvent2(this.id)"><h1 style="text-align: center;" id="numb5Hold"></h1></button>
+
+                </div>
+
+                <br>
+
+                <h1 id="text"></h1>
+    </article>
+
+    <script src="test.js"></script>
+
+
+</body>
+
+</html>
